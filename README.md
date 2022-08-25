@@ -188,8 +188,7 @@ sudo systemctl restart virtlogd.socket
 ```
 
 
-三、显卡直通
-::: block-1
+三、显卡直通<br>
 保险起见还是用cpu-z吧,不用双系统的话pe好多都带cpu-z的估计也可以,我是根据[ArchWiki](https://wiki.archlinux.org/index.php/PCI_passthrough_via_OVMF#UEFI_(OVMF)_compatibility_in_VBIOS)导出显卡固件,我不太确定我的步骤有没有问题,根据上面提到的数字id自行替换,有转义符是我用Tab补全命令时候出来的<br>
 
 ```
@@ -243,5 +242,5 @@ sudo chown 你的用户名:users GPU.rom
 <rom bar="on" file="/home/你的用户名/kvm/GPU.rom"/>
 ```
 到这里不出以外应该就可以开启虚拟机了,然后自己到官网下载驱动,安装后才能识别显卡,至少我的电脑就这样成功了,感谢LEDs大大,因为没有看到amd的hooks,参考nvidia的改了下,稀里糊涂的就进去了.特此记录一下步骤
-:::
+
 
