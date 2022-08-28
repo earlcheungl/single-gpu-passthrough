@@ -188,7 +188,7 @@ sudo vim /etc/libvirt/qemu.conf
 #把 user = "root" 改成 user = "现在你的用户名",
 #group = "root" 改成 group = "libvirt"
 
-sudo usermod -aG libirvt,storage,power ${USER}
+sudo usermod -aG libvirt,storage,power ${USER}
 
 sudo systemctl restart libvirtd.service
 
