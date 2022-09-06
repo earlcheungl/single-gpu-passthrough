@@ -126,8 +126,8 @@ sudo vim /etc/libvirt/hooks/vfio-startup.sh
 #下一个文件也是同样的:
 set -x
 systemctl stop sddm
-echo 0 > /etc/class/vtconsole/vtcon0/bind
-echo 0 > /etc/class/vtconsole/vtcon1/bind
+echo 0 > /sys/class/vtconsole/vtcon0/bind
+echo 0 > /sys/class/vtconsole/vtcon1/bind
 echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
 sleep 10
 modprobe -r amdgpu
@@ -150,8 +150,8 @@ modprobe -r vfio_iommu_type1
 modprobe -r vfio_virqfd
 virsh nodedev-reattach pci_0000_09_00_0
 virsh nodedev-reattach pci_0000_09_00_1
-echo 1 > /etc/class/vtconsole/vtcon0/bind
-echo 1 > /etc/class/vtconsole/vtcon1/bind
+echo 1 > /sys/class/vtconsole/vtcon0/bind
+echo 1 > /sys/class/vtconsole/vtcon1/bind
 echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/bind
 modprobe amdgpu
 modprobe radeon
